@@ -13,7 +13,7 @@ const Header = () => {
 
         <ul className="flex items-center gap-4 text-base text-slate-600">
           <li className="hover:text-primary font-semibold">
-            <Link to="/about">About</Link>
+            <Link to="/about-us">About Us</Link>
           </li>
           <li className="hover:text-primary font-semibold">
             <Link to="/real-estate">Real Estate</Link>

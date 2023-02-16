@@ -9,11 +9,11 @@ const Footer = () => {
   return (
     <div className="bg-dark-1 py-10">
       <Container className="flex flex-col items-center">
-        <Logo className="text-white"/>
+        <Logo className="text-white" />
 
         <ul className="flex items-center gap-4 text-base text-slate-200 mt-10">
           <li className="hover:text-slate-50 hover:border-b-2 pb-2 font-semibold">
-            <Link to="/about">About</Link>
+            <Link to="/about-us">About Us</Link>
           </li>
           <li className="hover:text-slate-50 hover:border-b-2 pb-2 font-semibold">
             <Link to="/real-estate">Real Estate</Link>
@@ -33,7 +33,9 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-        <div className="text-gray-400 mt-20">© Copyright 2022, Realyfy. All Rights Reserved.</div>
+        <div className="text-gray-400 mt-20">
+          © Copyright 2022, Realyfy. All Rights Reserved.
+        </div>
       </Container>
     </div>
   );
