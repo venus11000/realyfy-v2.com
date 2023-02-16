@@ -140,6 +140,7 @@ module.exports = {
       transparent: colors.transparent,
       primary: "#4f10cc",
       "primary-2": "#4F10CC",
+      "dark-1": "#1A202C",
       black: colors.black,
       white: colors.white,
       slate: colors.slate,
