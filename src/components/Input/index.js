@@ -36,7 +36,7 @@ const Input = ({
         onChange={onChange}
         value={value}
       />
-      {error && <span className="ml-2 text-sm text-re">{error}</span>}
+      {error && <span className="ml-2 text-sm text-red-600">{error}</span>}
     </div>
   );
 };
