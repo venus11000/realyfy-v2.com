@@ -23,7 +23,7 @@ const ContsctForm = () => {
 
   const { execute, isLoading, response, error } = useApi(
     // "http://127.0.0.1:8080/api/contact-us/create",
-    "https://api.realyfy.com/api/contact-us/create",
+    "/contact-us/create",
     "POST"
   );
 
