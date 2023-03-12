@@ -11,6 +11,7 @@ const Button = ({
   className = "",
   loading = false,
   disabled = false,
+  onClick = () => {}
 }) => {
   return (
     <button
@@ -27,6 +28,7 @@ const Button = ({
         className
       )}
       type={type}
+      onClick={onClick}
     >
       {label}
       {loading && (
