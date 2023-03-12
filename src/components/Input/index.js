@@ -4,6 +4,7 @@ import { classNames } from "../../utils/helpers/common";
 const Input = ({
   label = "",
   name = "",
+  type = "text",
   onChange = () => {},
   value = "",
   error = "",
@@ -33,6 +34,7 @@ const Input = ({
           fullWidth ? "w-full" : ""
         )}
         name={name}
+        type={type}
         onChange={onChange}
         value={value}
       />
