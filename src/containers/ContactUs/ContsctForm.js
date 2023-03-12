@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import useApi from "../../api/useApi";
 
 import Button from "../../components/Button";
@@ -44,7 +45,11 @@ const ContsctForm = () => {
           email: "",
           message: "",
         });
+      } else {
+        toast.error("Something went wrong!");
       }
+    } else if (error) {
+      toast.error("Something went wrong!");
     }
   }, [response, error]);
 
