@@ -12,7 +12,7 @@ const useApi = (url, method) => {
     let result = null;
     try {
       if (method === "POST") {
-        result = await post(url, data, headers);
+        result = await post(url, params, data, headers);
       } else if (method === "GET") {
         result = await get(url, params, headers);
       }
