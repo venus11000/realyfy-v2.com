@@ -9,6 +9,7 @@ import Homepage from "./Homepage";
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
 import Login from "./Login";
+import Dashboard from "./Dashboard";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <ToastContainer />
     </BrowserRouter>
