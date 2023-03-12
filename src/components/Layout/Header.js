@@ -7,7 +7,7 @@ import Logo from "./Logo";
 
 const Header = () => {
   return (
-    <header>
+    <header className="shadow-md">
       <Container className="flex items-center justify-between h-24">
         <Logo />
 
@@ -26,6 +26,11 @@ const Header = () => {
           </li>
           <li className="hover:text-primary font-semibold">
             <Link to="/finance">Finance</Link>
+          </li>
+          <li className="hover:text-primary font-semibold">
+            <Link to="/login">
+              <Button label="Login" variant="secondary" />
+            </Link>
           </li>
           <li className="hover:text-primary font-semibold">
             <Link to="/contact-us">

@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./Homepage";
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
+import Login from "./Login";
 
 const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <ToastContainer />
     </BrowserRouter>
