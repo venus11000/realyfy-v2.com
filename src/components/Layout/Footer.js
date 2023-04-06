@@ -11,7 +11,7 @@ const Footer = () => {
       <Container className="flex flex-col items-center">
         <Logo className="text-white" />
 
-        <ul className="flex items-center gap-4 text-base text-slate-200 mt-10">
+        <ul className="flex flex-col md:flex-row items-center gap-4 text-base text-slate-200 mt-10">
           <li className="hover:text-slate-50 hover:border-b-2 pb-2 font-semibold">
             <Link to="/about-us">About Us</Link>
           </li>
@@ -33,7 +33,7 @@ const Footer = () => {
             </Link>
           </li>
         </ul>
-        <div className="text-gray-400 mt-20">
+        <div className="text-gray-400 mt-20 text-center md:text-left">
           © Copyright 2022, Realyfy. All Rights Reserved.
         </div>
       </Container>

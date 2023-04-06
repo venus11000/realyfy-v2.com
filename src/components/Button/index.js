@@ -16,7 +16,7 @@ const Button = ({
   return (
     <button
       className={classNames(
-        "px-4 py-2 flex items-center gap-2 rounded-lg",
+        "px-4 py-2 flex items-center justify-center gap-2 rounded-lg",
         disabled
           ? "border border-gray-400 text-gray-400"
           : variant === "primary"

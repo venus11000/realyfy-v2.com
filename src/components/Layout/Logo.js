@@ -7,10 +7,10 @@ const Logo = ({ className = "text-primary " }) => {
   return (
     <Link to="/">
       <div className="flex items-center gap-1">
-        <div className="w-10 h-10 flex items-center justify-center bg-primary text-white text-2xl font-bold rounded">
+        <div className="w-8 md:w-10 h-8 md:h-10 flex items-center justify-center bg-primary text-white text-lg md:text-2xl font-bold rounded">
           R
         </div>
-        <div className={classNames("text-2xl font-bold", className)}>
+        <div className={classNames("text-lg md:text-2xl font-bold", className)}>
           Realyfy
         </div>
       </div>
