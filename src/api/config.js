@@ -1,6 +1,7 @@
 import axios from "axios";
+import { LOCAL_STORAGE_KEYS } from "../utils/constants/site-settings";
 
-const authToken = localStorage.getItem("authToken");
+const authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
 
 const instance = axios.create({
   baseURL: process.env.REACT_APP_API_ENDPOINT,
@@ -13,7 +14,7 @@ const instance = axios.create({
 export const get = (url, params = {}, headers = {}) => {
   if (Object.keys(params).length > 0)
     url += `?${new URLSearchParams(params).toString()}`;
-  let authToken = localStorage.getItem("authToken");
+  let authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
   if (authToken) headers.Authorization = `Bearer ${authToken}`;
   return instance.get(url, {
     headers,
@@ -23,7 +24,7 @@ export const get = (url, params = {}, headers = {}) => {
 export const post = (url, params = {}, data, headers = {}) => {
   if (Object.keys(params).length > 0)
     url += `?${new URLSearchParams(params).toString()}`;
-  let authToken = localStorage.getItem("authToken");
+  let authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
   if (authToken) headers.Authorization = `Bearer ${authToken}`;
   return instance.post(url, data, {
     headers,
@@ -33,7 +34,7 @@ export const post = (url, params = {}, data, headers = {}) => {
 export const put = (url, params = {}, data, headers = {}) => {
   if (Object.keys(params).length > 0)
     url += `?${new URLSearchParams(params).toString()}`;
-  let authToken = localStorage.getItem("authToken");
+  let authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
   if (authToken) headers.Authorization = `Bearer ${authToken}`;
   return instance.put(url, data, {
     headers,
@@ -43,7 +44,7 @@ export const put = (url, params = {}, data, headers = {}) => {
 export const patch = (url, params = {}, data, headers = {}) => {
   if (Object.keys(params).length > 0)
     url += `?${new URLSearchParams(params).toString()}`;
-  let authToken = localStorage.getItem("authToken");
+  let authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
   if (authToken) headers.Authorization = `Bearer ${authToken}`;
   return instance.patch(url, data, {
     headers,
@@ -53,7 +54,7 @@ export const patch = (url, params = {}, data, headers = {}) => {
 export const deleteMethod = (url, params = {}, data, headers = {}) => {
   if (Object.keys(params).length > 0)
     url += `?${new URLSearchParams(params).toString()}`;
-  let authToken = localStorage.getItem("authToken");
+  let authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
   if (authToken) headers.Authorization = `Bearer ${authToken}`;
   return instance.delete(url, {
     headers,
