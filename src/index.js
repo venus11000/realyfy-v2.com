@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 
 import AppRoutes from "./containers/routes";
+
+import store from "./store";
 
 import "./index.css";
 
@@ -10,7 +13,9 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AppRoutes />
+    <Provider store={store}>
+      <AppRoutes />
+    </Provider>
   </React.StrictMode>
 );
 
