@@ -8,6 +8,8 @@ import useApi from "../../api/useApi";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 
+import { LOCAL_STORAGE_KEYS } from "../../utils/constants/site-settings";
+
 const LoginForm = () => {
   const [fields, setFields] = useState({
     email: "",
@@ -31,10 +33,13 @@ const LoginForm = () => {
     console.log(response, error);
     if (response) {
       if (response.status === 200) {
-        localStorage.setItem("authToken", response.data.token);
+        localStorage.setItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN, response.data.token);
 
         // TODO: set User to redux.
         console.log(response.data);
+
+        // TODO: need to store user to redux.
+        // dispatch(getUserDetails());
 
         navigate("/dashboard");
 

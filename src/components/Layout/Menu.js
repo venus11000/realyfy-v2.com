@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../Button";
+import AuthMenu from "./AuthMenu";
 
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -24,14 +25,12 @@ const Menu = () => {
           <Link to="/finance">Finance</Link>
         </li>
         <li className="hover:text-primary font-semibold">
-          <Link to="/login">
-            <Button label="Login" variant="secondary" />
-          </Link>
-        </li>
-        <li className="hover:text-primary font-semibold">
           <Link to="/contact-us">
             <Button label="Contact Us" variant="primary" />
           </Link>
+        </li>
+        <li className="hover:text-primary font-semibold">
+          <AuthMenu />
         </li>
       </ul>
 
