@@ -1,7 +1,7 @@
 import { get, post } from "./config";
 
-export const login = () => {
-  return post("/auth/login");
+export const login = (data) => {
+  return post("/auth/login", {}, data);
 };
 
 export const getUserDetails = () => {
