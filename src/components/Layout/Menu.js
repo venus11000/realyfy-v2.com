@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../Button";
+import Container from "../Container";
 import AuthMenu from "./AuthMenu";
+import Logo from "./Logo";
 
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -34,7 +36,7 @@ const Menu = () => {
         </li>
       </ul>
 
-      {!showMenu ? (
+      {!showMenu && (
         <button
           className="md:hidden w-8 flex flex-col gap-1"
           onClick={() => setShowMenu(true)}
@@ -43,17 +45,21 @@ const Menu = () => {
           <div className="h-1 w-full bg-primary rounded-sm"></div>
           <div className="h-1 w-full bg-primary rounded-sm"></div>
         </button>
-      ) : (
-        <button
-          className="w-10 h-10 text-primary text-2xl font-semibold"
-          onClick={() => setShowMenu(false)}
-        >
-          X
-        </button>
       )}
 
       {showMenu && (
-        <div className="fixed top-[70px] bottom-0 left-0 right-0 bg-white">
+        <div className="fixed top-0 bottom-0 left-0 right-0 bg-white">
+          <div className="shadow-xl">
+            <Container className="flex items-center justify-between py-3">
+              <Logo />
+              <button
+                className="w-10 h-10 text-primary text-2xl font-semibold"
+                onClick={() => setShowMenu(false)}
+              >
+                X
+              </button>
+            </Container>
+          </div>
           <ul className="flex flex-col text-base text-slate-600">
             <li className="hover:text-primary font-semibold border-b border-primary">
               <Link to="/about-us">
