@@ -7,3 +7,11 @@ export const login = (data) => {
 export const getUserDetails = () => {
   return get("/user/user-details");
 };
+
+export const getServices = () => {
+  return get("/services");
+};
+
+export const createServiceRequest = (data) => {
+  return post("/service-request", {}, data);
+};
