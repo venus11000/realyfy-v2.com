@@ -9,6 +9,7 @@ const Input = ({
   value = "",
   error = "",
   fullWidth = false,
+  disabled = false,
 }) => {
   return (
     <div
@@ -21,6 +22,7 @@ const Input = ({
         <label
           className={classNames(
             "ml-2 text-sm mb-1",
+            disabled ? "text-gray-500" :
             error ? "text-red-600" : "text-primary"
           )}
         >
@@ -30,6 +32,7 @@ const Input = ({
       <input
         className={classNames(
           "border rounded-lg p-2",
+          disabled ? "border-gray-500 cursor-not-allowed text-gray-500" : 
           error ? "border-red-600" : "border-primary",
           fullWidth ? "w-full" : ""
         )}
@@ -37,6 +40,7 @@ const Input = ({
         type={type}
         onChange={onChange}
         value={value}
+        disabled={disabled}
       />
       {error && <span className="ml-2 text-sm text-red-600">{error}</span>}
     </div>
