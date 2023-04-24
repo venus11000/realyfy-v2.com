@@ -8,14 +8,25 @@ import Menu from "./Menu";
 
 import { getUserDetailsAction } from "../../store/common/User/actions";
 import { LOCAL_STORAGE_KEYS } from "../../utils/constants/site-settings";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const protectedRoutes = ["/dashboard"];
 
   useEffect(() => {
-    if (!user?.loading && !user?.data && localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN)) {
+    const authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
+    if (!user?.loading && !user?.data && authToken) {
       dispatch(getUserDetailsAction());
+    } else if (
+      protectedRoutes.includes(location.pathname) &&
+      (!authToken || (!user.loading && user.error))
+    ) {
+      navigate("/");
     }
   }, [user]);
 
