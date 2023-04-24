@@ -8,6 +8,10 @@ export const getUserDetails = () => {
   return get("/user/user-details");
 };
 
+export const getContactUsRequests = () => {
+  return get("/contact-us");
+};
+
 export const getServices = () => {
   return get("/services");
 };
