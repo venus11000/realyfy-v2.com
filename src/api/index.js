@@ -15,3 +15,7 @@ export const getServices = () => {
 export const createServiceRequest = (data) => {
   return post("/service-request", {}, data);
 };
+
+export const getServiceRequests = () => {
+  return get("/service-request");
+};

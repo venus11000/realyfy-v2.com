@@ -11,6 +11,7 @@ import ContactUs from "./ContactUs";
 import Service from "./Service";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
+import ServicingRequests from "./ServicingRequests";
 
 const AppRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const AppRoutes = () => {
         <Route path="/servicing" element={<Service />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/requests/servicing" element={<ServicingRequests />} />
       </Routes>
       <ToastContainer />
     </BrowserRouter>
