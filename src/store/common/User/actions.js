@@ -65,6 +65,9 @@ export const getUserDetailsAction = () => {
         dispatch(setUserDetailsError(response?.data));
       }
     } catch (error) {
+      if(error?.response?.status === 401 && error?.response?.data?.message) {
+        dispatch(handleLogout());
+      }
       console.log("GET USER DETAILS ERROR", error);
       dispatch(setUserDetailsError(error));
     }
