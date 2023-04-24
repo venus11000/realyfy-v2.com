@@ -10,7 +10,7 @@ import { getUserDetailsAction } from "../../store/common/User/actions";
 import { LOCAL_STORAGE_KEYS } from "../../utils/constants/site-settings";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ fullWidthHeader }) => {
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -32,10 +32,17 @@ const Header = () => {
 
   return (
     <header className="shadow-md">
-      <Container className="flex items-center justify-between h-16 md:h-24">
-        <Logo />
-        <Menu />
-      </Container>
+      {!fullWidthHeader ? (
+        <Container className="flex items-center justify-between h-16 md:h-24">
+          <Logo />
+          <Menu />
+        </Container>
+      ) : (
+        <div className="flex items-center justify-between p-4 h-16 md:h-24">
+          <Logo />
+          <Menu />
+        </div>
+      )}
     </header>
   );
 };
