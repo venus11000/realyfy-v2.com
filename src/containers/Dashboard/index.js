@@ -1,29 +1,37 @@
 import React from "react";
-
-import Container from "../../components/Container";
-import Layout from "../../components/Layout";
-import LoginForm from "./LoginForm";
-import { LOCAL_STORAGE_KEYS } from "../../utils/constants/site-settings";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import Layout from "../../components/Layout";
+import Breadcrumb from "../../components/Breadcrumb";
+
+import { LOCAL_STORAGE_KEYS } from "../../utils/constants/site-settings";
 
 const Dashboard = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { user } = useSelector((state) => state.user);
   const authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
 
   if (!authToken) {
     navigate("/");
-  };
+  }
 
   return (
-    <Layout>
-      <Container className="my-32 flex flex-col items-center justify-center">
-        {/* <div className="max-w-lg w-full border border-primary rounded-2xl p-10"> */}
-        <h1 className="text-center text-3xl text-primary font-semibold mb-10">
-          Welcome
+    <Layout fullWidthHeader={true} showSidebar={true}>
+      <div className="p-4">
+        <Breadcrumb
+          data={[
+            {
+              label: "Dashboard",
+              link: "/dashboard",
+            },
+          ]}
+          className={"mb-5"}
+        />
+        <h1 className="text-2xl text-primary">
+          Welcome <span className="font-semibold">{user?.data?.fullName}!</span>
         </h1>
-        <LoginForm />
-        {/* </div> */}
-      </Container>
+      </div>
     </Layout>
   );
 };
