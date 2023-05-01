@@ -9,8 +9,17 @@ const Layout = ({ children, fullWidthHeader, showSidebar, hideFooterLink }) => {
     <div>
       <Header fullWidthHeader={fullWidthHeader} />
       <div className="grid grid-cols-12">
-        {showSidebar && <div className="col-span-3 xl:col-span-2 h-full"><Sidebar /></div>}
-        <main className={showSidebar ? "col-span-9 xl:col-span-10" : "col-span-12"}>
+        {showSidebar && (
+          <div className="col-span-3 xl:col-span-2 h-full">
+            <Sidebar />
+          </div>
+        )}
+        <main
+          className={showSidebar ? "col-span-9 xl:col-span-10" : "col-span-12"}
+          style={{
+            minHeight: "calc(100vh - 96px - 104px)",
+          }}
+        >
           {children}
         </main>
       </div>
