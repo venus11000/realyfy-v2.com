@@ -10,7 +10,12 @@ import HeroSection from "../../assets/images/homepage/hero-section.svg";
 
 const Homepage = () => {
   return (
-    <Layout>
+    <Layout
+      seo={{
+        title:
+          "Realyfy.com | One stop solution for all your real estate, home service needs!",
+      }}
+    >
       <Container>
         <div className="grid grid-cols-12 py-20">
           <div className="col-span-12 md:col-span-6 flex flex-col justify-center text-lg md:text-4xl text-center md:text-left">
@@ -53,7 +58,9 @@ const Homepage = () => {
                   </div>
                 </div>
                 <div className="col-span-12 md:col-span-8 text-center md:text-left mt-5 md:mt-0">
-                  <h2 className="text-lg md:text-2xl font-bold mb-2">{feature.heading}</h2>
+                  <h2 className="text-lg md:text-2xl font-bold mb-2">
+                    {feature.heading}
+                  </h2>
                   <p className="text-md md:text-1xl text-gray-500 font-semibold">
                     {feature.description}
                   </p>

@@ -6,11 +6,18 @@ import LoginForm from "./LoginForm";
 
 const ContactUs = () => {
   return (
-    <Layout>
+    <Layout
+      seo={{
+        title:
+          "Login | Realyfy.com | One stop solution for all your real estate, home service needs!",
+      }}
+    >
       <Container className="my-32 flex flex-col items-center justify-center">
         <div className="max-w-lg w-full border border-primary rounded-2xl p-10">
-        <h1 className="text-center text-3xl text-primary font-semibold mb-10">Login</h1>
-        <LoginForm />
+          <h1 className="text-center text-3xl text-primary font-semibold mb-10">
+            Login
+          </h1>
+          <LoginForm />
         </div>
       </Container>
     </Layout>

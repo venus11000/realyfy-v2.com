@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
 
-import Layout from '../../components/Layout'
+import Layout from "../../components/Layout";
 
 const Finance = () => {
   return (
-    <Layout>Finance</Layout>
-  )
-}
+    <Layout
+      seo={{
+        title:
+          "Finance | Realyfy.com | One stop solution for all your real estate, home service needs!",
+      }}
+    >
+      Finance
+    </Layout>
+  );
+};
 
-export default Finance
+export default Finance;

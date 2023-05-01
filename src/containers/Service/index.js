@@ -6,7 +6,14 @@ import ServiceForm from "./components/ServiceForm";
 
 const Service = () => {
   return (
-    <Layout>
+    <Layout
+      seo={{
+        title:
+          "Services | Realyfy.com | One stop solution for all your real estate, home service needs!",
+        keywords:
+          "AC repair, AC installation, Electrical services, Pluming etc",
+      }}
+    >
       <Container className="flex flex-col items-center">
         <h1 className="text-primary text-lg md:text-2xl font-semibold my-5 md:my-10">
           Welcome to our Service Page!
@@ -20,77 +27,76 @@ const Service = () => {
         </p>
 
         <ServiceForm />
-        </Container>
+      </Container>
 
-        <Container className="py-10">
-          <h2 className="text-center text-2xl md:text-4xl font-semibold pb-10">
-            How it works
-          </h2>
-          <div className="flex flex-col md:flex-row item-start justify-around gap-10">
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
-                1
-              </div>
-              <div>
-                <h3 className="text-center text-xl font-semibold py-6">
-                  Pick A Service
-                </h3>
-                <p className="text-center">
-                  Find your service, check out the up-front prices and highly
-                  reviewed Independent Service Pros.
-                </p>
-              </div>
+      <Container className="py-10">
+        <h2 className="text-center text-2xl md:text-4xl font-semibold pb-10">
+          How it works
+        </h2>
+        <div className="flex flex-col md:flex-row item-start justify-around gap-10">
+          <div className="flex flex-col items-center">
+            <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
+              1
             </div>
-
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
-                2
-              </div>
-              <div>
-                <h3 className="text-center text-xl font-semibold py-6">
-                  Book Online
-                </h3>
-                <p className="text-center">
-                  Simply tell us what the problem is and when and where a Pro
-                  should show up.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center">
-              <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
-                3
-              </div>
-              <div>
-                <h3 className="text-center text-xl font-semibold py-6">
-                  Pay After Work is Done
-                </h3>
-                <p className="text-center">
-                  We connect you to a Pro who will fix your problem — you pay
-                  only after the work is done.
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-        
-        <div className="bg-primary py-14">
-          <Container className="grid grid-cols-12 text-white gap-y-10 md:gap-0">
-            <div className="col-span-12 md:col-span-3 text-8xl text-white flex items-center justify-center">
-              <i class="fa-regular fa-circle-check"></i>
-            </div>
-            <div className="col-span-12 md:col-span-9 my-auto text-center md:text-left">
-              <h2 className="text-3xl font-semibold mb-6">Realyfy Guarantee</h2>
-              <p className="text-lg">
-                We stand behind the quality of our Pros. If you are not
-                reasonably satisfied with the Pro who is sent to your home, we
-                will seek to rectify the situation. This is our commitment to
-                you.
+            <div>
+              <h3 className="text-center text-xl font-semibold py-6">
+                Pick A Service
+              </h3>
+              <p className="text-center">
+                Find your service, check out the up-front prices and highly
+                reviewed Independent Service Pros.
               </p>
             </div>
-          </Container>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
+              2
+            </div>
+            <div>
+              <h3 className="text-center text-xl font-semibold py-6">
+                Book Online
+              </h3>
+              <p className="text-center">
+                Simply tell us what the problem is and when and where a Pro
+                should show up.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
+              3
+            </div>
+            <div>
+              <h3 className="text-center text-xl font-semibold py-6">
+                Pay After Work is Done
+              </h3>
+              <p className="text-center">
+                We connect you to a Pro who will fix your problem — you pay only
+                after the work is done.
+              </p>
+            </div>
+          </div>
         </div>
-        {/* <Container>
+      </Container>
+
+      <div className="bg-primary py-14">
+        <Container className="grid grid-cols-12 text-white gap-y-10 md:gap-0">
+          <div className="col-span-12 md:col-span-3 text-8xl text-white flex items-center justify-center">
+            <i class="fa-regular fa-circle-check"></i>
+          </div>
+          <div className="col-span-12 md:col-span-9 my-auto text-center md:text-left">
+            <h2 className="text-3xl font-semibold mb-6">Realyfy Guarantee</h2>
+            <p className="text-lg">
+              We stand behind the quality of our Pros. If you are not reasonably
+              satisfied with the Pro who is sent to your home, we will seek to
+              rectify the situation. This is our commitment to you.
+            </p>
+          </div>
+        </Container>
+      </div>
+      {/* <Container>
          <div className="grid grid-cols-12 items-center gap-10 my-40">
            <div className="col-span-6">
              <h2 className="text-primary text-xl font-bold mb-1">Contact Us</h2>

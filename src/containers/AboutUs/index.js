@@ -8,7 +8,12 @@ import OutTemOfExperiancedProfessionals from "../../assets/images/about-us/our-t
 
 const AboutUs = () => {
   return (
-    <Layout>
+    <Layout
+      seo={{
+        title:
+          "About Us | Realyfy.com | One stop solution for all your real estate, home service needs!",
+      }}
+    >
       <Container>
         <div className="grid grid-cols-12 items-center gap-10 my-40">
           <div className="col-span-6">
