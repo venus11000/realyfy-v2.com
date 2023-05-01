@@ -10,6 +10,7 @@ const ContactUs = () => {
       seo={{
         title:
           "Login | Realyfy.com | One stop solution for all your real estate, home service needs!",
+        url: "https://realyfy.com/login",
       }}
     >
       <Container className="my-32 flex flex-col items-center justify-center">

@@ -12,6 +12,7 @@ const Service = () => {
           "Services | Realyfy.com | One stop solution for all your real estate, home service needs!",
         keywords:
           "AC repair, AC installation, Electrical services, Pluming etc",
+        url: "https://realyfy.com/servicing",
       }}
     >
       <Container className="flex flex-col items-center">

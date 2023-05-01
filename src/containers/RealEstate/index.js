@@ -30,9 +30,17 @@ import Faq from "./Faq";
 
 const AboutUs = () => {
   return (
-    <Layout>
+    <Layout
+      seo={{
+        title:
+          "Real Estate | Realyfy.com | One stop solution for all your real estate, home service needs!",
+        url: "https://realyfy.com/real-estate",
+      }}
+    >
       <Container>
-        <h1 className="text-primary text-4xl text-center font-semibold mt-10">Real Estate</h1>
+        <h1 className="text-primary text-4xl text-center font-semibold mt-10">
+          Real Estate
+        </h1>
         <div className="grid grid-cols-12 items-center gap-10 my-20">
           <div className="col-span-6">
             <h3 className="text-primary text-xl font-bold mb-1">
@@ -59,7 +67,9 @@ const AboutUs = () => {
         </div>
 
         <div>
-        <h2 className="text-primary text-xl text-center font-bold mb-4">Our Key Features</h2>
+          <h2 className="text-primary text-xl text-center font-bold mb-4">
+            Our Key Features
+          </h2>
           <ul className="m-5 text-gray-600 text-base">
             <li className="mb-2">
               <b>Experienced agents:</b> realyfy has a team of experienced

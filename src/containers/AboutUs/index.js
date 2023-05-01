@@ -12,6 +12,7 @@ const AboutUs = () => {
       seo={{
         title:
           "About Us | Realyfy.com | One stop solution for all your real estate, home service needs!",
+        url: "https://realyfy.com/about-us",
       }}
     >
       <Container>
