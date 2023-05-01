@@ -130,3 +130,11 @@ export const faqs = [
       "We pride ourselves on providing exceptional customer service, personalized attention, and a full range of services to meet our clients' needs, from buying and selling to financing and home services.",
   },
 ];
+
+export const defaultSeo = {
+  title: "Realyfy.com | Real Estate, House Services, Interiors and Finance",
+  description:
+    "At Realyfy, we offer a wide range of services to help you with all your needs. Whether you're looking for a house to buy or sell, home loan, interior design services, or home maintenance, we've got you covered. With our one-stop-shop approach, we make the real estate process simple and stress-free.",
+  keywords:
+    "realyfy.com,https://realyfy.com,www.realyfy.com,https://www.realyfy.com,real estate,realestate,real-estate,servicing,services,home services,home-sevices,hourse servicing,house-servicing,finance,home-loans,home loan",
+};
