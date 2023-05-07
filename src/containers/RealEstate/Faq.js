@@ -5,7 +5,7 @@ const Faq = () => {
   const [activeFaq, setActiveFaq] = useState(-1);
   return (
     <div>
-      <h2 className="text-primary text-xl text-center font-bold mb-4">FAQ's</h2>
+      <h2 className="text-primary text-xl md:text-2xl text-center font-bold mb-4">FAQ's</h2>
       <ul>
         {faqs?.map((faq, index) => (
           <li
@@ -14,16 +14,16 @@ const Faq = () => {
               activeFaq === index ? setActiveFaq(-1) : setActiveFaq(index)
             }
           >
-            <div className="px-5 py-3 text-lg font-semibold flex items-center justify-between cursor-pointer">
+            <div className="px-5 py-3 text-sm md:text-lg text-justify font-semibold flex items-center justify-between cursor-pointer">
               {faq?.question}
               {activeFaq === index ? (
-                <i class="fa-solid fa-chevron-up"></i>
+                <i className="pl-5 fa-solid fa-chevron-up"></i>
               ) : (
-                <i class="fa-solid fa-chevron-down"></i>
+                <i className="pl-5 fa-solid fa-chevron-down"></i>
               )}
             </div>
             {activeFaq === index && (
-              <div className="px-5 py-3">{faq?.answer}</div>
+              <div className="text-sm md:text-lg text-justify px-5 py-3">{faq?.answer}</div>
             )}
           </li>
         ))}

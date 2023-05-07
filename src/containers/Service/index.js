@@ -31,49 +31,49 @@ const Service = () => {
       </Container>
 
       <Container className="py-10">
-        <h2 className="text-center text-2xl md:text-4xl font-semibold pb-10">
+        <h2 className="text-center text-lg md:text-2xl font-semibold pb-10">
           How it works
         </h2>
-        <div className="flex flex-col md:flex-row item-start justify-around gap-10">
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
-              1
+        <div className="flex flex-col md:flex-row item-start justify-around gap-5 md:gap-10">
+          <div className="grid grid-cols-12 md:flex md:flex-col items-center gap-2">
+            <div className="col-span-2 bg-primary rounded-full w-12 md:w-20 h-12 md:h-20 relative flex items-center justify-center">
+              <span className="text-white text-xl md:text-3xl font-semibold">1</span>
             </div>
-            <div>
-              <h3 className="text-center text-xl font-semibold py-6">
+            <div className="col-span-10">
+              <h3 className="md:text-center text-base md:text-lg font-semibold py-1 md:py-6">
                 Pick A Service
               </h3>
-              <p className="text-center">
+              <p className="text-sm md:text-base text-justify md:text-center">
                 Find your service, check out the up-front prices and highly
                 reviewed Independent Service Pros.
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
-              2
+          <div className="grid grid-cols-12 md:flex md:flex-col items-center gap-2">
+            <div className="col-span-2 bg-primary rounded-full w-12 md:w-20 h-12 md:h-20 relative flex items-center justify-center">
+              <span className="text-white text-xl md:text-3xl font-semibold">2</span>
             </div>
-            <div>
-              <h3 className="text-center text-xl font-semibold py-6">
+            <div className="col-span-10">
+              <h3 className="md:text-center text-base md:text-lg font-semibold py-1 md:py-6">
                 Book Online
               </h3>
-              <p className="text-center">
+              <p className="text-sm md:text-base text-justify md:text-center">
                 Simply tell us what the problem is and when and where a Pro
                 should show up.
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="bg-primary rounded-full w-20 h-20 flex items-center justify-center text-white text-3xl font-semibold">
-              3
+          <div className="grid grid-cols-12 md:flex md:flex-col items-center gap-2">
+            <div className="col-span-2 bg-primary rounded-full w-12 md:w-20 h-12 md:h-20 relative flex items-center justify-center">
+              <span className="text-white text-xl md:text-3xl font-semibold">3</span>
             </div>
-            <div>
-              <h3 className="text-center text-xl font-semibold py-6">
+            <div className="col-span-10">
+              <h3 className="md:text-center text-base md:text-lg font-semibold py-1 md:py-6">
                 Pay After Work is Done
               </h3>
-              <p className="text-center">
+              <p className="text-sm md:text-base text-justify md:text-center">
                 We connect you to a Pro who will fix your problem — you pay only
                 after the work is done.
               </p>
@@ -82,14 +82,14 @@ const Service = () => {
         </div>
       </Container>
 
-      <div className="bg-primary py-14">
-        <Container className="grid grid-cols-12 text-white gap-y-10 md:gap-0">
-          <div className="col-span-12 md:col-span-3 text-8xl text-white flex items-center justify-center">
-            <i class="fa-regular fa-circle-check"></i>
+      <div className="bg-primary py-6 md:py-14">
+        <Container className="grid grid-cols-12 text-white gap-y-2 md:gap-0">
+          <div className="col-span-12 md:col-span-3 text-6xl md:text-8xl text-white flex items-center justify-center">
+            <i className="fa-regular fa-circle-check"></i>
           </div>
           <div className="col-span-12 md:col-span-9 my-auto text-center md:text-left">
-            <h2 className="text-3xl font-semibold mb-6">Realyfy Guarantee</h2>
-            <p className="text-lg">
+            <h2 className="text-lg md:text-3xl font-semibold mb-2 md:mb-6">Realyfy Guarantee</h2>
+            <p className="text-sm md:text-lg text-justify md:text-center">
               We stand behind the quality of our Pros. If you are not reasonably
               satisfied with the Pro who is sent to your home, we will seek to
               rectify the situation. This is our commitment to you.

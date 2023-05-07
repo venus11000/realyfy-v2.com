@@ -16,24 +16,31 @@ const ContactUs = () => {
       }}
     >
       <Container>
-        <div className="grid grid-cols-12 items-center gap-10 my-40">
+        <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-10 mt-5 md:mt-10">
           <div className="col-span-6">
-            <h2 className="text-primary text-xl font-bold mb-1">Contact Us</h2>
-            <h1 className="text-gray-700 text-6xl font-bold mb-5">
+            <h1 className="text-primary text-xl md:text-4xl text-center font-semibold mt-5 md:mt-10">
+              Contact Us
+            </h1>
+            <h2 className="text-primary text-base md:text-2xl text-center font-bold mb-5">
               Feel free to <span className="text-primary">get in touch</span>{" "}
               with us.
-            </h1>
-            <p className="text-xl text-gray-600 font-medium mb-5">
+            </h2>
+            <div className="md:hidden col-span-1 md:col-span-6 mb-10">
+              <img src={EmailIllustration} alt="one-stop-solution" />
+            </div>
+            <p className="text-sm md:text-xl text-gray-600 text-justify font-medium mb-5">
               Want to get in touch? We'd love to hear from you. Here's how you
               can reach us...
             </p>
+            <div className="mb-5">
             <ContsctForm />
+            </div>
             {/* <p className="text-xl text-gray-600 font-medium mb-5">
               Sometimes you needs a little help from your friends. Or a Realyfy
               support Rep. Don't worry... we're here for you.
             </p> */}
           </div>
-          <div className="col-span-6">
+          <div className="hidden md:block col-span-1 md:col-span-6">
             <img src={EmailIllustration} alt="one-stop-solution" />
           </div>
         </div>
