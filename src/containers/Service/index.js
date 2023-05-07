@@ -16,9 +16,12 @@ const Service = () => {
       }}
     >
       <Container className="flex flex-col items-center">
-        <h1 className="text-primary text-lg md:text-2xl font-semibold my-5 md:my-10">
-          Welcome to our Service Page!
+        <h1 className="text-primary text-xl md:text-4xl text-center font-semibold mt-5 md:mt-10">
+          Home Services
         </h1>
+        <h2 className="text-sm md:text-base text-gray-500 text-center mt-2 md:mt-5 mb-5">
+          "When your home needs a hero, call us."
+        </h2>
 
         <p className="text-sm md:text-xl text-center md:px-20 mb-5 md:mb-10">
           <span className="text-primary">Realyfy</span> is commited to offer
@@ -37,7 +40,9 @@ const Service = () => {
         <div className="flex flex-col md:flex-row item-start justify-around gap-5 md:gap-10">
           <div className="grid grid-cols-12 md:flex md:flex-col items-center gap-2">
             <div className="col-span-2 bg-primary rounded-full w-12 md:w-20 h-12 md:h-20 relative flex items-center justify-center">
-              <span className="text-white text-xl md:text-3xl font-semibold">1</span>
+              <span className="text-white text-xl md:text-3xl font-semibold">
+                1
+              </span>
             </div>
             <div className="col-span-10">
               <h3 className="md:text-center text-base md:text-lg font-semibold py-1 md:py-6">
@@ -52,7 +57,9 @@ const Service = () => {
 
           <div className="grid grid-cols-12 md:flex md:flex-col items-center gap-2">
             <div className="col-span-2 bg-primary rounded-full w-12 md:w-20 h-12 md:h-20 relative flex items-center justify-center">
-              <span className="text-white text-xl md:text-3xl font-semibold">2</span>
+              <span className="text-white text-xl md:text-3xl font-semibold">
+                2
+              </span>
             </div>
             <div className="col-span-10">
               <h3 className="md:text-center text-base md:text-lg font-semibold py-1 md:py-6">
@@ -67,7 +74,9 @@ const Service = () => {
 
           <div className="grid grid-cols-12 md:flex md:flex-col items-center gap-2">
             <div className="col-span-2 bg-primary rounded-full w-12 md:w-20 h-12 md:h-20 relative flex items-center justify-center">
-              <span className="text-white text-xl md:text-3xl font-semibold">3</span>
+              <span className="text-white text-xl md:text-3xl font-semibold">
+                3
+              </span>
             </div>
             <div className="col-span-10">
               <h3 className="md:text-center text-base md:text-lg font-semibold py-1 md:py-6">
@@ -88,7 +97,9 @@ const Service = () => {
             <i className="fa-regular fa-circle-check"></i>
           </div>
           <div className="col-span-12 md:col-span-9 my-auto text-center md:text-left">
-            <h2 className="text-lg md:text-3xl font-semibold mb-2 md:mb-6">Realyfy Guarantee</h2>
+            <h2 className="text-lg md:text-3xl font-semibold mb-2 md:mb-6">
+              Realyfy Guarantee
+            </h2>
             <p className="text-sm md:text-lg text-justify md:text-center">
               We stand behind the quality of our Pros. If you are not reasonably
               satisfied with the Pro who is sent to your home, we will seek to
