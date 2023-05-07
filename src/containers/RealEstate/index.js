@@ -22,8 +22,7 @@ const RealEstate = () => {
           Real Estate
         </h1>
         <h2 className="text-sm md:text-base text-gray-500 text-center mt-2 md:mt-5">
-          "Simplify Your Home Financing Journey with Realyfy's Quick and Easy
-          Home Loans."
+          "Finding your perfect home is our top priority"
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-10 mt-5 md:mt-10">
           <div className="md:hidden col-span-1 md:col-span-6">
