@@ -57,7 +57,7 @@ export const exploreSite = [
     label: "Interiors",
   },
   {
-    link: "/home-services",
+    link: "/servicing",
     image: HomeServices,
     label: "Home Services",
   },
