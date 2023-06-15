@@ -9,6 +9,7 @@ import Badge from "../../components/Badge";
 import StatusCard from "./StatusCard";
 
 import { getServiceRequests } from "../../api";
+import { formatDateIST } from "../../utils/helpers/date-time";
 
 import { LOCAL_STORAGE_KEYS } from "../../utils/constants/site-settings";
 
@@ -146,9 +147,21 @@ const ServicingRequests = () => {
                 accessor: "comments",
               },
               {
+                label: "Create Date",
+                accessor: "createdAt",
+                Cell: (props) =>
+                  props?.row?.createdAt ? (
+                    <div className="text-center">
+                      {formatDateIST(props?.row?.createdAt)}
+                    </div>
+                  ) : null,
+              },
+              {
                 label: "Status",
                 accessor: "status",
-                Cell: (props) => <StatusCard {...props} onSuccessUpdate={getRequests} />
+                Cell: (props) => (
+                  <StatusCard {...props} onSuccessUpdate={getRequests} />
+                ),
               },
             ]}
           />
