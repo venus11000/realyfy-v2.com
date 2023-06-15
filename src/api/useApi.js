@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { post, get } from "./config";
+import { post, get, put } from "./config";
 
 const useApi = (url, method) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,6 +15,8 @@ const useApi = (url, method) => {
         result = await post(url, params, data, headers);
       } else if (method === "GET") {
         result = await get(url, params, headers);
+      } else if (method === "PUT") {
+        result = await put(url, params, data, headers);
       }
       setIsLoading(false);
       setResponse(result);
