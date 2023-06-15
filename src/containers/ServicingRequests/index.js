@@ -4,11 +4,12 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
 import Breadcrumb from "../../components/Breadcrumb";
 import Table from "../../components/Table";
+import PageHeader from "../../components/PageHeader";
+import Badge from "../../components/Badge";
 
 import { getServiceRequests } from "../../api";
 
 import { LOCAL_STORAGE_KEYS } from "../../utils/constants/site-settings";
-import PageHeader from "../../components/PageHeader";
 
 const ServicingRequests = () => {
   const [requests, setRequests] = useState([]);
@@ -126,6 +127,16 @@ const ServicingRequests = () => {
                       <b>Pincode:</b>
                       {props?.row?.addressDetails?.pincode}
                     </div>
+                  </div>
+                ),
+              },
+              {
+                label: "Request Type",
+                Cell: (props) => (
+                  <div>
+                    {props?.row?.serviceInfo?.map((service) => (
+                      <Badge label={service?.name} key={service?._id} />
+                    ))}
                   </div>
                 ),
               },
