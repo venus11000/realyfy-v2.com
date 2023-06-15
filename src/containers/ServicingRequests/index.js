@@ -6,6 +6,7 @@ import Breadcrumb from "../../components/Breadcrumb";
 import Table from "../../components/Table";
 import PageHeader from "../../components/PageHeader";
 import Badge from "../../components/Badge";
+import StatusCard from "./StatusCard";
 
 import { getServiceRequests } from "../../api";
 
@@ -147,6 +148,7 @@ const ServicingRequests = () => {
               {
                 label: "Status",
                 accessor: "status",
+                Cell: (props) => <StatusCard {...props} onSuccessUpdate={getRequests} />
               },
             ]}
           />
