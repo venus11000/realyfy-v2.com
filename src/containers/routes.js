@@ -18,6 +18,7 @@ import Interiors from "./Interiors";
 import Finance from "./Finance";
 
 const AppRoutes = () => {
+
   return (
     <BrowserRouter>
       <Routes>

@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 
 import Header from "./Header";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
+
 import { defaultSeo } from "../../utils/constants/site-settings";
+import { pageview } from "../../analytics/gtag";
 
 // seo = {
 //  titile, description, keywords, url
 // }
 
 const Layout = ({ children, seo, fullWidthHeader, showSidebar, hideFooterLink }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    pageview(location.pathname);
+  }, [])
+
   return (
     <div>
       {seo && <Helmet>

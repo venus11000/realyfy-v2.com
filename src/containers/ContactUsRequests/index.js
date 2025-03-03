@@ -4,14 +4,20 @@ import { useNavigate } from "react-router-dom";
 import Layout from "../../components/Layout";
 import Breadcrumb from "../../components/Breadcrumb";
 import Table from "../../components/Table";
+import Tabs from "../../components/Tabs";
+import Dropdown from "../../components/Dropdown";
+import PageHeader from "../../components/PageHeader";
+import InlineLoader from "../../components/Loader/InlineLoader";
 
 import { getContactUsRequests } from "../../api";
 
 import { LOCAL_STORAGE_KEYS } from "../../utils/constants/site-settings";
-import PageHeader from "../../components/PageHeader";
+import { requestStatus } from "../../constants/common";
 
 const ContactUsRequests = () => {
   const [requests, setRequests] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState(null);
   const [alert, setAlert] = useState("");
   const navigate = useNavigate();
   const authToken = localStorage.getItem(LOCAL_STORAGE_KEYS.AUTH_TOKEN);
@@ -20,20 +26,41 @@ const ContactUsRequests = () => {
     navigate("/");
   }
 
-  const getRequests = async () => {
-    const response = await getContactUsRequests();
+  const getRequests = async (status) => {
+    setIsLoading(true);
+    const payload = {
+      status,
+    };
+    const response = await getContactUsRequests(payload);
 
     if (response?.status === 200) {
       console.log(response?.data);
       setRequests(response?.data?.requests);
+      setIsLoading(false);
     } else {
       setAlert("Something went wrong, Try after sometine!");
+      setIsLoading(false);
     }
   };
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
+  const handleStatusUpdate = (event) => {
+    console.log("status", event.target.value)
+
+  }
+
   useEffect(() => {
-    getRequests();
+    setActiveTab(requestStatus[0]);
   }, []);
+
+  useEffect(() => {
+    if (activeTab?.value) {
+      getRequests(activeTab?.value);
+    }
+  }, [activeTab]);
 
   return (
     <Layout fullWidthHeader={true} showSidebar={true}>
@@ -68,46 +95,51 @@ const ContactUsRequests = () => {
               x
             </button>
           </div>
-        ) : requests?.length > 0 ? (
-          <Table
-            data={requests}
-            columns={[
-              {
-                label: "slno",
-                accessor: "",
-                Cell: (props) => props.index + 1,
-              },
-              {
-                label: "Full Name",
-                accessor: "fullName",
-              },
-              {
-                label: "Contact Number",
-                accessor: "contactNumber",
-              },
-              {
-                label: "Email",
-                accessor: "email",
-              },
-              {
-                label: "Message",
-                accessor: "message",
-              },
-              {
-                label: "Status",
-                accessor: "status",
-              },
-            ]}
-          />
+        ) : isLoading ? (
+          <div className="flex items-center justify-center w-full">
+            <InlineLoader color="#6415ff" />
+          </div>
         ) : (
-          <div className="flex items-center justify-between bg-primary px-5 text-white rounded-sm">
-            <span className="py-3">No requests yet!</span>
-            <button
-              className="text-lg text-white p-3"
-              onClick={() => setAlert("")}
-            >
-              x
-            </button>
+          <div>
+            <Tabs
+              tabs={requestStatus}
+              activeTab={activeTab?.value}
+              handleClick={handleTabChange}
+            />
+            <Table
+              data={requests}
+              columns={[
+                {
+                  label: "slno",
+                  accessor: "",
+                  Cell: (props) => props.index + 1,
+                },
+                {
+                  label: "Full Name",
+                  accessor: "fullName",
+                },
+                {
+                  label: "Contact Number",
+                  accessor: "contactNumber",
+                },
+                {
+                  label: "Email",
+                  accessor: "email",
+                },
+                {
+                  label: "Message",
+                  accessor: "message",
+                },
+                {
+                  label: "Status",
+                  accessor: "status",
+                  Cell: (data) => {
+                    console.log(data)
+                    return <Dropdown options={requestStatus} onChange={handleStatusUpdate} value={data?.status}/>
+                  }
+                },
+              ]}
+            />
           </div>
         )}
       </div>

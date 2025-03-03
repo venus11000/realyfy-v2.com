@@ -5,33 +5,63 @@ import Button from "../Button";
 import Container from "../Container";
 import AuthMenu from "./AuthMenu";
 import Logo from "./Logo";
+import { event } from "../../analytics/gtag";
 
 const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const handleMenuClick = (menuName = "") => {
+    event({
+      action: "click",
+      category: "Menu",
+      label: `${menuName} - clicked`,
+      value: 1,
+    });
+  };
+
   return (
     <div>
       <ul className="hidden md:flex items-center gap-4 text-base text-slate-600">
         <li className="hover:text-primary font-semibold">
-          <Link to="/about-us">About Us</Link>
-        </li>
-        <li className="hover:text-primary font-semibold">
-          <Link to="/real-estate">Real Estate</Link>
-        </li>
-        <li className="hover:text-primary font-semibold">
-          <Link to="/interiors">Interiors</Link>
-        </li>
-        <li className="hover:text-primary font-semibold">
-          <Link to="/servicing">Home Servicing</Link>
-        </li>
-        <li className="hover:text-primary font-semibold">
-          <Link to="/finance">Finance</Link>
-        </li>
-        <li className="hover:text-primary font-semibold">
-          <Link to="/contact-us">
-            <Button label="Contact Us" variant="primary" />
+          <Link to="/about-us" onClick={() => handleMenuClick("About Us")}>
+            About Us
           </Link>
         </li>
         <li className="hover:text-primary font-semibold">
+          <Link
+            to="/real-estate"
+            onClick={() => handleMenuClick("Real Estate")}
+          >
+            Real Estate
+          </Link>
+        </li>
+        <li className="hover:text-primary font-semibold">
+          <Link to="/interiors" onClick={() => handleMenuClick("Interiors")}>
+            Interiors
+          </Link>
+        </li>
+        <li className="hover:text-primary font-semibold">
+          <Link
+            to="/servicing"
+            onClick={() => handleMenuClick("Home Servicing")}
+          >
+            Home Servicing
+          </Link>
+        </li>
+        <li className="hover:text-primary font-semibold">
+          <Link to="/finance" onClick={() => handleMenuClick("Finance")}>
+            Finance
+          </Link>
+        </li>
+        <li className="hover:text-primary font-semibold">
+          <Link to="/contact-us" onClick={() => handleMenuClick("Contact Us")}>
+            <Button label="Contact Us" variant="primary" />
+          </Link>
+        </li>
+        <li
+          className="hover:text-primary font-semibold"
+          onClick={() => handleMenuClick("Login")}
+        >
           <AuthMenu />
         </li>
       </ul>

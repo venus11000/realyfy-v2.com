@@ -8,8 +8,8 @@ export const getUserDetails = () => {
   return get("/user/user-details");
 };
 
-export const getContactUsRequests = () => {
-  return get("/contact-us");
+export const getContactUsRequests = (params) => {
+  return get(`/contact-us?status=${params?.status}`);
 };
 
 export const getServices = () => {
